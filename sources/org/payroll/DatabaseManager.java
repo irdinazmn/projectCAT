@@ -85,7 +85,7 @@ public class DatabaseManager {
 		}
 	}
 
-
+// verify if the ID exist
 	public Boolean verifyLoginId(String username) {
 		try {
 			return curs.executeQuery(
@@ -96,7 +96,7 @@ public class DatabaseManager {
 		}
 		return false;
 	}
-
+//verify if password and username is correct
 	public Boolean verifyLoginId(String username, String password) {
 		try {
 			return curs.executeQuery(
@@ -108,6 +108,7 @@ public class DatabaseManager {
 		return false;
 	}
 
+	//create new login ID
 	public void createLoginId(String username, String password) {
 		try {
 			curs.executeUpdate("INSERT INTO login_ids VALUES(null, \"" + username + "\", \"" + password + "\")");
@@ -116,6 +117,7 @@ public class DatabaseManager {
 		}
 	}
 
+	//delete login ID
 	public void deleteLoginId(String username) {
 		try {
 			curs.executeUpdate(
