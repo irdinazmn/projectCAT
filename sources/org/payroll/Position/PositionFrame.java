@@ -1,18 +1,13 @@
-package org.payroll.Manager;
+package org.payroll.Position;
 
 import org.payroll.Main;
 import org.payroll.Manager.DashboardFrame;
-import org.payroll.Position.AddPositionFrame;
-import org.payroll.Position.DeletePositionFrame;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.Position;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class PositionFrame extends JFrame {
     private JPanel JPnlPositionMenu;
