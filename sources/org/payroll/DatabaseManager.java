@@ -85,46 +85,47 @@ public class DatabaseManager {
 		}
 	}
 
-//	public Boolean verifyLoginId(String username) {
-//		try {
-//			return curs.executeQuery(
-//					"SELECT * FROM login_ids WHERE username=\"" + username + "\""
-//				).next();
-//		} catch (SQLException e) {
-//			System.err.println(e.getMessage());
-//		}
-//		return false;
-//	}
-//
-//	public Boolean verifyLoginId(String username, String password) {
-//		try {
-//			return curs.executeQuery(
-//					"SELECT * FROM login_ids WHERE username=\"" + username + "\" AND password=\"" + password + "\""
-//				).next();
-//		} catch (SQLException e) {
-//			System.err.println(e.getMessage());
-//		}
-//		return false;
-//	}
-//
-//	public void createLoginId(String username, String password) {
-//		try {
-//			curs.executeUpdate("INSERT INTO login_ids VALUES(null, \"" + username + "\", \"" + password + "\")");
-//		} catch (SQLException e) {
-//			System.err.println(e.getMessage());
-//		}
-//	}
-//
-//	public void deleteLoginId(String username) {
-//		try {
-//			curs.executeUpdate(
-//					"DELETE FROM login_ids WHERE username=\"" + username + "\""
-//				);
-//		} catch (SQLException e) {
-//			System.err.println(e.getMessage());
-//		}
-//	}
-//
+
+	public Boolean verifyLoginId(String username) {
+		try {
+			return curs.executeQuery(
+					"SELECT * FROM login_ids WHERE username=\"" + username + "\""
+				).next();
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+		return false;
+	}
+
+	public Boolean verifyLoginId(String username, String password) {
+		try {
+			return curs.executeQuery(
+					"SELECT * FROM login_ids WHERE username=\"" + username + "\" AND password=\"" + password + "\""
+				).next();
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+		return false;
+	}
+
+	public void createLoginId(String username, String password) {
+		try {
+			curs.executeUpdate("INSERT INTO login_ids VALUES(null, \"" + username + "\", \"" + password + "\")");
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+	public void deleteLoginId(String username) {
+		try {
+			curs.executeUpdate(
+					"DELETE FROM login_ids WHERE username=\"" + username + "\""
+				);
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
 //	public void changePassword(String username, String newPassword) {
 //		try {
 //			curs.executeUpdate(
