@@ -496,6 +496,78 @@ public class DatabaseManager {
 		return 0;
 	}
 
+//get employee attendance data on a particular date from table attendance . Store data in attendance Object and
+	//store the object in an array of object and return it to be used in Jtable in the Jframe
+	public Object[][] getAttendance(String date) {
+		ArrayList<Object[]> Attendance = new ArrayList<Object[]>();
+		ResultSet rs;
+		int id;
+		String empID, emPName, CIT, COT, dt;
+
+
+		try {
+			rs = curs.executeQuery("SELECT clock_in_id,emp_id,strftime('%H : %M : %S',clock_in_time) AS clockIn," +
+					"strftime('%H : %M : %S',clock_out_time) AS clockOut, attendance_date AS dates " +
+					"FROM Attendance WHERE clock_out_time IS NOT NULL");
+
+			while (rs.next()) {
+				id = rs.getInt("clock_in_id");
+				empID = rs.getString("emp_id");
+				CIT = rs.getString("clockIn"); // get clock_in_time as String
+				COT = rs.getString("clockOut"); //get clock_out_time as String
+				dt = rs.getString("dates");
+				emPName = getEmployeeName(empID);
+				System.out.println(dt);
+				System.out.println(date);
+				if ( dt.equals(date) ){
+					Object[] temp = {id, empID, emPName, dt, CIT, COT}; //Object to hold employee Attendance data
+					Attendance.add(temp); // add object to array
+				}
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+
+		return Attendance.toArray(new Object[Attendance.size()][]);
+
+	}
+
+	//get All employee attendance data from table attendance . Store data in attendance Object and
+	//store the object in an array of object and return it to be used in Jtable in the Jframe
+	public Object[][] getAllAttendance() {
+		ArrayList<Object[]> Attendance = new ArrayList<Object[]>();
+		ResultSet rs;
+		int id;
+		String empID, emPName, dt, CIT, COT;
+
+
+		try {
+			rs = curs.executeQuery("SELECT clock_in_id,emp_id,strftime('%H:%M:%S',clock_in_time) AS clockIn," +
+					"strftime('%H:%M:%S',clock_out_time) AS clockOut,attendance_date AS dates FROM Attendance" +
+					" WHERE clock_out_time IS NOT NULL ");
+
+			while (rs.next()) {
+				id = rs.getInt("clock_in_id");
+				empID = rs.getString("emp_id");
+				CIT = rs.getString("clockIn");
+				COT = rs.getString("clockOut");
+				dt = rs.getString("dates");
+
+				emPName = getEmployeeName(empID);
+
+				Object[] temp = {id, empID, emPName, dt, CIT, COT};
+
+				Attendance.add(temp);
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+		return Attendance.toArray(new Object[Attendance.size()][]);
+
+	}
+
+
+
 
 
 
