@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChangePasswordFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel ChangePasswordPanel;
     private JPasswordField JPFldPassword;
     private JPasswordField JPFldNewPassword;

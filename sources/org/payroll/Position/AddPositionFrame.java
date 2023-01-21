@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddPositionFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel AddPositionPanel;
     private JTextField JTFldNamePost;
     private JTextField JTFldHourlyRate;

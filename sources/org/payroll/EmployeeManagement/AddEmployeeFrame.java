@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class AddEmployeeFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel AddEmployeePanel;
     private JLabel JTFldTitle;
     private JTextField JTFldEmpID;

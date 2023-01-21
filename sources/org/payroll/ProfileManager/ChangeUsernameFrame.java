@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChangeUsernameFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel ChangeUsernamePanel;
     private JButton JBtnCancel;
     private JButton JBtnChange;

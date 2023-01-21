@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 
 public class DashboardFrame extends JFrame{
 
+    //Declare the element of the frame
     private JPanel DashboardPanel;
     private JLabel JLblDashboard;
     private JButton JBtnEmpManage;

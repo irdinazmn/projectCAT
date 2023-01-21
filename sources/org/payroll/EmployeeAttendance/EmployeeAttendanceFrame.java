@@ -16,6 +16,8 @@ import java.util.Date;
 import java.util.Objects;
 
 public class EmployeeAttendanceFrame extends JFrame{
+
+    //Declare the element of the frame
     private JSplitPane EmployeeAttendancePanel;
     private JPanel JPnlEmployeeAtenndance;
     private JLabel JLblTitle;
@@ -34,6 +36,8 @@ public class EmployeeAttendanceFrame extends JFrame{
 
 
     public EmployeeAttendanceFrame() {
+
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(EmployeeAttendancePanel);

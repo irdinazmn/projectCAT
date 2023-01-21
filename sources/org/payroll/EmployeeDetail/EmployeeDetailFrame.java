@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EmployeeDetailFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel EmployeeDetailPanel;
     private JButton JBtnReload;
     private JLabel JLblTitle;

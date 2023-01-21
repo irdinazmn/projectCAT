@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DeleteEmployeeFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel DeleteEmployeePanel;
     private JLabel JLblTitle;
     private JTextField JTFldEmpID;

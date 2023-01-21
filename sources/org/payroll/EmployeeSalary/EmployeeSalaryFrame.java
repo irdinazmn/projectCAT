@@ -16,6 +16,8 @@ import java.util.Date;
 
 
 public class EmployeeSalaryFrame extends JFrame{
+
+    //Declare the element of the frame
     private JSplitPane EmployeeSalaryPanel;
     private JPanel EmployeeAttendancePanel;
     private JTable JTblReport;

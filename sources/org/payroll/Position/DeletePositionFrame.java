@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class DeletePositionFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel DeletePositionPanel;
     private JButton JBtnCancel;
     private JButton JBtnDelete;

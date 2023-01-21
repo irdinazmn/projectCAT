@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 public class ManagerLoginFrame extends JFrame {
+
+    //Declare the element of the frame
     private JPanel ManagerLoginPanel;
     private JLabel JLblTitle;
     private JTextField JTFldUsername;

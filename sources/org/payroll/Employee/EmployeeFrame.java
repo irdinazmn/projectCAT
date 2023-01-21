@@ -15,8 +15,10 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 
-
+//Function: Display Employee menu to login, clock-in,clock-out
 public class EmployeeFrame extends JFrame implements Runnable {
+
+    //Declare the element of the frame
     private JPanel EmployeePanel;
     private JLabel JLblClock;
     private JTextField JTFIdEmp;
@@ -31,6 +33,8 @@ public class EmployeeFrame extends JFrame implements Runnable {
     String id;
 
     public EmployeeFrame(){
+
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(EmployeePanel);
@@ -42,16 +46,14 @@ public class EmployeeFrame extends JFrame implements Runnable {
         setResizable(false);
         setVisible(true);
 
-        if (JBtnClockIn.isVisible() && JBtnClockOut.isVisible()){
-
-            JBtnClockIn.setVisible(false);
-            JBtnClockOut.setVisible(false);
-        }
+        //Make the button clok-in and clock-out not visible, so the user can login first
+        JBtnClockIn.setVisible(false);
+        JBtnClockOut.setVisible(false);
 
         JBtnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                String id = JTFIdEmp.getText();
+                //Verifying the employee id
                 if (Main.dbManager.existsEmployeeID(JTFIdEmp.getText())){
                     JOptionPane.showMessageDialog(
                             null,
@@ -81,6 +83,7 @@ public class EmployeeFrame extends JFrame implements Runnable {
         JBtnClockIn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Verifying if the user already clock-in for today or not
                 if (!(Main.dbManager.VerifyClockin(JTFIdEmp.getText()))){
                     Main.dbManager.PunchIn(JTFIdEmp.getText());
                     JOptionPane.showMessageDialog(
@@ -104,7 +107,10 @@ public class EmployeeFrame extends JFrame implements Runnable {
         JBtnClockOut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Verifying if the user already clock-in for today or not
                 if (Main.dbManager.VerifyClockin(JTFIdEmp.getText())){
+
+                    //Verifying if the user already clock-out for today or not
                     if (!(Main.dbManager.VerifyClockOut(JTFIdEmp.getText()))) {
                         Main.dbManager.PunchOut(JTFIdEmp.getText());
                         Main.dbManager.InsertEmployeeSalaryFromAttandance(JTFIdEmp.getText());
@@ -135,6 +141,7 @@ public class EmployeeFrame extends JFrame implements Runnable {
             }
         });
 
+        //Add action listener to call back the previous frame
         JBtnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -145,6 +152,7 @@ public class EmployeeFrame extends JFrame implements Runnable {
         });
     }
 
+    //Class to diaplay current time based on the time in the computer system
     @Override
     public void run() {
             int c = 1;

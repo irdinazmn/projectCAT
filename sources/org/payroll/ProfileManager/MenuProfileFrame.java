@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuProfileFrame extends JFrame{
+
+    //Declare the element of the frame
     private JPanel MenuProfilePanel;
     private JLabel JLblTitle;
     private JButton JBtnChangeUsername;
