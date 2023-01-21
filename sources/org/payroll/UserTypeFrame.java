@@ -36,6 +36,15 @@ public class UserTypeFrame extends JFrame{
 
             }
         });
+
+        //Action listener for button to call the ManagerLoginFrame function class
+        JBtnManager.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                (new ManagerLoginFrame()).setVisible(true);
+            }
+        });
     }
 
 }
