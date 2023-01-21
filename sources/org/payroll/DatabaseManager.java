@@ -517,9 +517,9 @@ public class DatabaseManager {
 				COT = rs.getString("clockOut"); //get clock_out_time as String
 				dt = rs.getString("dates");
 				emPName = getEmployeeName(empID);
-				System.out.println(dt);
-				System.out.println(date);
-				if ( dt.equals(date) ){
+
+				if ( dt.equals(date) ) // if the two date is equal then add the data for that row into array
+				{
 					Object[] temp = {id, empID, emPName, dt, CIT, COT}; //Object to hold employee Attendance data
 					Attendance.add(temp); // add object to array
 				}
@@ -566,23 +566,92 @@ public class DatabaseManager {
 
 	}
 
+	// total up the hours and pay for each employee and group them by emp_id , month and year
+	// return array Object salary to be used in Jtable
+	public Object[][] getAllMonthlySalary() {
+		ArrayList<Object[]> Salary = new ArrayList<Object[]>();
+		String EmID, EmFN;
+		int m, y;
+		double TP, TH;
+
+		try {
+			ResultSet rs = curs.executeQuery
+					(
+							"SELECT  emp_id, emp_name, SUM(salary_per_day) AS Tot_sal ,SUM(total_time) AS Tot_time,strftime('%Y',date_salary) AS sal_year," +
+									"strftime('%m',date_salary) AS sal_month FROM emp_salary " +
+									"GROUP BY emp_id , sal_year ,sal_month " +
+									"ORDER BY sal_month, sal_year DESC  "
+					);
+
+			while (rs.next()) {
 
 
+				Object[] temp = {
+						rs.getString("emp_id"),
+						rs.getString("emp_name"),
+						rs.getInt("sal_month"),
+						rs.getInt("sal_year"),
+						rs.getDouble("Tot_sal"),
+						rs.getDouble("Tot_time")
+
+				};
+
+				Salary.add(temp);
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+
+		return Salary.toArray(new Object[Salary.size()][]);
+
+	}
+
+	// total up the hours and pay for each employee and group them by emp_id , month and year
+	// return array Object salary to be used in Jtable , This one can be is according to the month and year chosen by user
+	public Object[][] getSalaryByMonthAndYear(int month, int year) {
+		ArrayList<Object[]> Salary = new ArrayList<Object[]>();
+		String EmID, EmFN;
+		int m, y;
+		double TP, TH;
 
 
+		try {
 
+			ResultSet rs = curs.executeQuery
+					(
+							"SELECT  emp_id, emp_name, SUM(salary_per_day) AS tot_salary ,SUM(total_time) AS tot_time , strftime('%Y',date_salary) AS sal_year, " +
+									"strftime('%m',date_salary) AS sal_month  FROM emp_salary " +
+									"GROUP BY  emp_id , sal_year ,sal_month"
 
+					);
 
+			while (rs.next()) {
 
+				Object[] temp = {
+						rs.getString("emp_id"),
+						rs.getString("emp_name"),
+						rs.getInt("sal_month"),
+						rs.getInt("sal_year"),
+						rs.getDouble("Tot_salary"),
+						rs.getDouble("Tot_time")
 
+				};
 
+				m = rs.getInt("sal_month");
+				y = rs.getInt("sal_year");
 
+				if ((m == month) & (y == year)) // if the column year and month in table match with user year and month input , add object to array
+				{
+					Salary.add(temp);
+				}
 
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
 
+		return Salary.toArray(new Object[Salary.size()][]);
 
-
-
-
-
+	}
 
 }
