@@ -65,6 +65,65 @@ public class TableToPDF {
     }
 
 
+    public void AttandancePDF( Object[][] newdata ){
+
+        try {
+
+            Object[][] data = newdata;
+            String col[] ={"ID","Employee ID","Employee Full Name","Date","Clock In Time","Clock Out Time"};
+            DefaultTableModel model = new DefaultTableModel(data, col);
+            JTable table = new JTable(model);
+
+            int count = table.getRowCount();
+            Document document = new Document();
+
+            PdfWriter.getInstance(document, new FileOutputStream("Attendance_List.PDF"));
+            document.open();
+            float[] widths = {2, 2, 5, 3, 3 , 3};
+            PdfPTable tab = new PdfPTable(widths);
+            tab.setWidthPercentage(110);
+            tab.setSpacingBefore(10f);
+            tab.addCell("ID");
+            tab.addCell("Employee ID");
+            tab.addCell("Employee Full Name");
+            tab.addCell("Date");
+            tab.addCell("Clock In Time");
+            tab.addCell("Clock Out Time");
+
+            for (int i = 0; i < count; i++) {
+
+                Object obj1 = table.getValueAt(i, 0);
+                Object obj2 = table.getValueAt(i, 1);
+                Object obj3 = table.getValueAt(i, 2);
+                Object obj4 = table.getValueAt(i, 3);
+                Object obj5 = table.getValueAt(i, 4);
+                Object obj6 = table.getValueAt(i, 5);
+
+                String value1 = obj1.toString();
+                String value2 = obj2.toString();
+                String value3 = obj3.toString();
+                String value4 = obj4.toString();
+                String value5 = obj5.toString();
+                String value6 = obj5.toString();
+
+                tab.addCell(value1);
+                tab.addCell(value2);
+                tab.addCell(value3);
+                tab.addCell(value4);
+                tab.addCell(value5);
+                tab.addCell(value6);
+
+            }
+            document.add(tab);
+            document.close();
+
+        }catch (Exception e){
+
+        };
+    }
+
+
+
 
 
 
