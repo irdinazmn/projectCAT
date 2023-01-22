@@ -86,11 +86,12 @@ public class DatabaseManager {
 	}
 
 // verify if the ID exist
-	public Boolean verifyLoginId(String username) {
+
+	public Boolean verifyLoginId(String id) {
 		try {
 			return curs.executeQuery(
-					"SELECT * FROM login_ids WHERE username=\"" + username + "\""
-				).next();
+					"SELECT * FROM login_ids WHERE id=\"" + id + "\""
+			).next();
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
@@ -127,6 +128,28 @@ public class DatabaseManager {
 			System.err.println(e.getMessage());
 		}
 	}
+
+
+	public void changePassword(String Password, String newPassword) {
+		try {
+			curs.executeUpdate(
+					"UPDATE login_ids SET password=\"" + newPassword + "\" WHERE password=\"" + Password + "\""
+			);
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+	public void changeUsername(String newusername, String Password) {
+		try {
+			curs.executeUpdate(
+					"UPDATE login_ids SET username=\"" + newusername + "\" WHERE password=\"" + Password + "\""
+			);
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
 
 	//check if employee already log in for the day
 	public Boolean VerifyClockin(String empID) {
@@ -265,6 +288,26 @@ public class DatabaseManager {
 		}
 		return false;
 	}
+
+	public void newPosition(String pos_name, int hourly_rate, int overtime_rate) {
+
+		try {
+			curs.executeUpdate(
+					"INSERT INTO Position VALUES(" +
+							"null," +
+							"\"" + pos_name + "\" ," +
+							Integer.toString(hourly_rate) + "," +
+							Integer.toString(overtime_rate) +
+							")"
+			);
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+
+
+
 
 	//delete position and employee with that position
 	public void deletePosition(String pos_name) {
