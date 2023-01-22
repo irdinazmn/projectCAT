@@ -41,7 +41,7 @@ public class AddPositionFrame extends JFrame{
                 int h_rate = Integer.parseInt(JTFldHourlyRate.getText());
                 int o_rate = Integer.parseInt(JTFldOvertimeRate.getText());
 
-                Main.dbManager.newPositions(name, h_rate, o_rate);
+                Main.dbManager.newPosition(name, h_rate, o_rate);
 
                 JOptionPane.showMessageDialog(
                         null,
