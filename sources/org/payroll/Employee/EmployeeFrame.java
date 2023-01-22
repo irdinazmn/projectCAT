@@ -14,7 +14,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
-
 //Function: Display Employee menu to login, clock-in,clock-out
 public class EmployeeFrame extends JFrame implements Runnable {
 
@@ -50,6 +49,7 @@ public class EmployeeFrame extends JFrame implements Runnable {
         JBtnClockIn.setVisible(false);
         JBtnClockOut.setVisible(false);
 
+        //Login action listener for user employee to login
         JBtnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

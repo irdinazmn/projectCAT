@@ -14,7 +14,8 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+/*Function: Display and download The employee salary table that are in the database or user can choose
+            a specific month and year of salary data to display in the employee salary table*/
 public class EmployeeSalaryFrame extends JFrame{
 
     //Declare the element of the frame
@@ -33,10 +34,12 @@ public class EmployeeSalaryFrame extends JFrame{
     private JButton JBtnBack;
     private JButton JBtnDownload;
 
+    //To display the choice of month and year in the frame
     JYearChooser yearChooser = new JYearChooser();
     JMonthChooser monthChooser = new JMonthChooser();
 
     public EmployeeSalaryFrame() {
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(EmployeeSalaryPanel);
@@ -46,20 +49,24 @@ public class EmployeeSalaryFrame extends JFrame{
         setResizable(true);
         setVisible(true);
 
+        //Assigning the yearChooser and monthChooser to a panel to display the choice
+        // of month and year in the frame for user to choose
         JPnlYear.add(yearChooser);
         JPnlMonth.add(monthChooser);
 
         JLblMonth.setVisible(false);
         JLblYear.setVisible(false);
 
+        //declaring Object[][] variable to store the data from the database
         Object[][] data = Main.dbManager.getAllMonthlySalary();
+        //Set the JTable based on the data from the database
         String col[] = {"Employee ID","Employee Full Name","Month","Year","Total Salary","Total Hours Worked"};
-
         JTblReport.setModel(new DefaultTableModel(data,col));
 
         JBtnGet.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //To retrieve the date that user choose to see
                 Integer yr = yearChooser.getYear();
                 JLblYear.setText(yr.toString());
                 Integer mnth = monthChooser.getMonth();
@@ -68,11 +75,14 @@ public class EmployeeSalaryFrame extends JFrame{
                 JLblMonth.setVisible(true);
                 JLblYear.setVisible(true);
 
+                //Assigning the date to the database
                 Object[][] Ndata = Main.dbManager.getSalaryByMonthAndYear(mnth, yr);
+                //Set the JTable based on the data from the chosen date in the database
                 JTblReport.setModel(new DefaultTableModel(Ndata,col));
             }
         });
 
+        //Back action listener to call back the previous frame
         JBtnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,9 +92,12 @@ public class EmployeeSalaryFrame extends JFrame{
             }
         });
 
+        //Calling the function to convert the data into pdf
         JBtnDownload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                /*If the user did not choose any specific date, then it
+                  will convert all attendance data in database*/
                 if (JLblMonth.isVisible() && JLblYear.isVisible()){
                     Integer yr = yearChooser.getYear();
                     JLblYear.setText(yr.toString());

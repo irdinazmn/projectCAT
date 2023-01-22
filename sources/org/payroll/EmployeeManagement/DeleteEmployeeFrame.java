@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Function: Form for user to fill in to delete a new employee
 public class DeleteEmployeeFrame extends JFrame{
 
     //Declare the element of the frame
@@ -18,6 +19,7 @@ public class DeleteEmployeeFrame extends JFrame{
     private JLabel JLblEmpID;
 
     public DeleteEmployeeFrame() {
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(DeleteEmployeePanel);
@@ -27,6 +29,7 @@ public class DeleteEmployeeFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
+        //Cancel button to call the previous function
         JBtnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,19 +38,31 @@ public class DeleteEmployeeFrame extends JFrame{
             }
         });
 
+        //Delete button action listener to delete the desired employee based on employee id
         JBtnDelete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 String Id = JTFldEmpID.getText();
+                if (Main.dbManager.verifyLoginId(Id)) {
 
-                Main.dbManager.deleteEmployee(Id);
+                    Main.dbManager.deleteEmployee(Id);
 
-                JOptionPane.showMessageDialog(
-                        null,
-                        "Employee Deleted",
-                        "Employee Deleted",
-                        JOptionPane.INFORMATION_MESSAGE
-                );
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Employee Deleted",
+                            "Employee Deleted",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                }
+                else{
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Delete employee Failed\nCannot confirm the employee ID",
+                            "Delete employee failed",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                }
                 (new EmployeeManagementFrame()).setVisible(true);
                 dispose();
             }

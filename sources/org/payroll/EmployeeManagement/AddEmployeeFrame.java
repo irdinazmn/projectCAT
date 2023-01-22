@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+//Function: Form for user to fill in to add a new employee
 public class AddEmployeeFrame extends JFrame{
 
     //Declare the element of the frame
@@ -26,9 +27,11 @@ public class AddEmployeeFrame extends JFrame{
     private JLabel JLblLastName;
     private JTextField JTFldLastName;
 
+    //declaring ArrayList<String> variable to store the data from the database
     ArrayList<String> positions = Main.dbManager.getListOfPositionName();
 
     public AddEmployeeFrame() {
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(AddEmployeePanel);
@@ -38,9 +41,10 @@ public class AddEmployeeFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
-//        JCBoxPosition = new JComboBox<String>(positions.toArray(new String[positions.size()]));
+        //Set the JComboBox based on the data from the databse
         JCBoxPosition.setModel(new DefaultComboBoxModel(positions.toArray(new String[positions.size()])));
 
+        //Cancel button to call the previous function
         JBtnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,6 +53,7 @@ public class AddEmployeeFrame extends JFrame{
             }
         });
 
+        //Add button action listener to add all the detail user put into database
         JBtnAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

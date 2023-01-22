@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Function: Form for user to fill in to change new password for manager user account
 public class ChangePasswordFrame extends JFrame{
 
     //Declare the element of the frame
@@ -22,6 +23,8 @@ public class ChangePasswordFrame extends JFrame{
     private JLabel JLblConfirmPassword;
 
     public ChangePasswordFrame() {
+
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(ChangePasswordPanel);
@@ -31,6 +34,7 @@ public class ChangePasswordFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
+        //Cancel button to call the previous function
         JBtnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,6 +42,7 @@ public class ChangePasswordFrame extends JFrame{
             }
         });
 
+        //Change action listener to update the data fill in by user into the database
         JBtnChange.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -45,6 +50,7 @@ public class ChangePasswordFrame extends JFrame{
                 String N_Pass = (JPFldNewPassword.getPassword()).toString();
                 String C_Pass = (JPFldConfirmPassword.getPassword()).toString();
 
+                //Verifying the user input
                 if (N_Pass == C_Pass) {
                     if (Main.dbManager.verifyLoginId(O_Pass)) {
                         Main.dbManager.changePassword(O_Pass, N_Pass);

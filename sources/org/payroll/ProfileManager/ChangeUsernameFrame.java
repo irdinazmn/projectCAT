@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Function: Form for user to fill in to change new username for manager user account
 public class ChangeUsernameFrame extends JFrame{
 
     //Declare the element of the frame
@@ -22,6 +23,8 @@ public class ChangeUsernameFrame extends JFrame{
     private JLabel JLblConfirmUsername;
 
     public ChangeUsernameFrame() {
+
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(ChangeUsernamePanel);
@@ -31,6 +34,7 @@ public class ChangeUsernameFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
+        //Cancel button to call the previous function
         JBtnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,6 +42,7 @@ public class ChangeUsernameFrame extends JFrame{
             }
         });
 
+        //Change action listener to update the data fill in by user into the database
         JBtnChange.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -45,6 +50,7 @@ public class ChangeUsernameFrame extends JFrame{
                 String N_UName = (JTFldNewUsername.getText());
                 String C_UName = (JTFldConfirmUsername.getText());
 
+                //Verifying the user input
                 if (N_UName == C_UName) {
                     if (Main.dbManager.verifyLoginId(Pass)) {
                         Main.dbManager.changeUsername(N_UName, Pass);

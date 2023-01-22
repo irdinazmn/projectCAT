@@ -12,6 +12,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Function: Display the Dashboard menu frame for user to choose
+// the activity frame that they want to do
 public class DashboardFrame extends JFrame{
 
     //Declare the element of the frame
@@ -28,6 +30,7 @@ public class DashboardFrame extends JFrame{
     private JButton JBtnPosition;
 
     public DashboardFrame() {
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(DashboardPanel);
@@ -37,6 +40,7 @@ public class DashboardFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
+        //Declaring all the action listener for every button in the frame to call other function
         JBtnEmpManage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

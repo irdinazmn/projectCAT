@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Function: Display the Employee Management menu frame for user to choose
+// to change either username or password
 public class MenuProfileFrame extends JFrame{
 
     //Declare the element of the frame
@@ -17,6 +19,8 @@ public class MenuProfileFrame extends JFrame{
     private JButton JBtnBack;
 
     public MenuProfileFrame() {
+
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(MenuProfilePanel);
@@ -26,6 +30,8 @@ public class MenuProfileFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
+        //Declaring all the action listener for every button in the frame to call other function
+        // displaying a form for user to fill in order to change the employee data
         JBtnChangeUsername.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,6 +47,7 @@ public class MenuProfileFrame extends JFrame{
             }
         });
 
+        //Back action listener to call back the previous frame
         JBtnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

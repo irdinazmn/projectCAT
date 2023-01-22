@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+//Function: Display Employee menu to login
 public class ManagerLoginFrame extends JFrame {
 
     //Declare the element of the frame
@@ -22,6 +23,7 @@ public class ManagerLoginFrame extends JFrame {
     private JButton JBtnExit;
 
     public ManagerLoginFrame() {
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(ManagerLoginPanel);
@@ -31,9 +33,11 @@ public class ManagerLoginFrame extends JFrame {
         setResizable(false);
         setVisible(true);
 
+        //Login action listener for user manager to login
         JBtnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Verifying the manager username and password
                 if (Main.dbManager.verifyLoginId(JTFldUsername.getText(), new String(JPFldPassword.getPassword()))){
                     JOptionPane.showMessageDialog(
                             null,
@@ -60,6 +64,7 @@ public class ManagerLoginFrame extends JFrame {
             }
         });
 
+        //Add action listener to call back the previous frame
         JBtnExit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

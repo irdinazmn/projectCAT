@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+//Function: Form for user to fill in to add a new position
 public class DeletePositionFrame extends JFrame{
 
     //Declare the element of the frame
@@ -18,9 +19,11 @@ public class DeletePositionFrame extends JFrame{
     private JLabel JLblNamePost;
     private JComboBox JCBoxPosition;
 
+    //declaring ArrayList<String> variable to store the data from the database
     ArrayList<String> positions = Main.dbManager.getListOfPositionName();
 
     public DeletePositionFrame() {
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(DeletePositionPanel);
@@ -30,8 +33,10 @@ public class DeletePositionFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
+        //Set the JComboBox based on the data from the databse
         JCBoxPosition.setModel(new DefaultComboBoxModel(positions.toArray(new String[positions.size()])));
 
+        //Cancel button to call the previous function
         JBtnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,6 +44,9 @@ public class DeletePositionFrame extends JFrame{
                 dispose();
             }
         });
+
+        //Delete button action listener to delete the desired employee based on the
+        // existing position in the database
         JBtnDelete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

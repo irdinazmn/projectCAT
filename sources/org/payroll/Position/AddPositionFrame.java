@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Function: Form for user to fill in to add a new position
 public class AddPositionFrame extends JFrame{
 
     //Declare the element of the frame
@@ -22,6 +23,7 @@ public class AddPositionFrame extends JFrame{
     private JLabel JLblOvertimeRate;
 
     public AddPositionFrame() {
+        //Set the size, layout and properties of the frame
         super();
         setTitle("EMPLOYEE PAYROLL SYSTEM");
         setContentPane(AddPositionPanel);
@@ -32,6 +34,7 @@ public class AddPositionFrame extends JFrame{
         setVisible(true);
 
         JBtnAdd.addActionListener(new ActionListener() {
+            //Add button action listener to add all the detail user put into database
             @Override
             public void actionPerformed(ActionEvent e) {
                 String name = JTFldNamePost.getText();
@@ -53,6 +56,7 @@ public class AddPositionFrame extends JFrame{
             }
         });
 
+        //Cancel button to call the previous function
         JBtnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
