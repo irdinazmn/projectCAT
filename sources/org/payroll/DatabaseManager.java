@@ -40,10 +40,10 @@ public class DatabaseManager {
 	void initNewDatabase() {
 		try {
 			curs.executeUpdate(
-					"CREATE TABLE Login_ID (id INTEGER NOT NULL PRIMARY KEY, username STRING NOT NULL, password STRING NOT NULL)"
+					"CREATE TABLE login_ID (id INTEGER NOT NULL PRIMARY KEY, username STRING NOT NULL, password STRING NOT NULL)"
 			);
 			curs.executeUpdate(
-					"INSERT INTO Login_ID VALUES(null, \"admin\", \"1\")"
+					"INSERT INTO login_ID VALUES(null, \"admin\", \"1\")"
 			);
 			curs.executeUpdate(
 					"CREATE TABLE Position(" +
@@ -101,7 +101,7 @@ public class DatabaseManager {
 	public Boolean verifyLoginId(String username, String password) {
 		try {
 			return curs.executeQuery(
-					"SELECT * FROM login_ids WHERE username=\"" + username + "\" AND password=\"" + password + "\""
+					"SELECT * FROM login_ID WHERE username=\"" + username + "\" AND password=\"" + password + "\""
 				).next();
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
