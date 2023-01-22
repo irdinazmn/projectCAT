@@ -151,8 +151,6 @@ public class DatabaseManager {
 	}
 
 
-
-
 	//check if employee already log in for the day
 	public Boolean VerifyClockin(String empID) {
 		try {
@@ -290,6 +288,26 @@ public class DatabaseManager {
 		}
 		return false;
 	}
+
+	public void newPosition(String pos_name, int hourly_rate, int overtime_rate) {
+
+		try {
+			curs.executeUpdate(
+					"INSERT INTO Position VALUES(" +
+							"null," +
+							"\"" + pos_name + "\" ," +
+							Integer.toString(hourly_rate) + "," +
+							Integer.toString(overtime_rate) +
+							")"
+			);
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+
+
+
 
 	//delete position and employee with that position
 	public void deletePosition(String pos_name) {
