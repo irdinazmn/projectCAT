@@ -129,6 +129,30 @@ public class DatabaseManager {
 		}
 	}
 
+
+	public void changePassword(String Password, String newPassword) {
+		try {
+			curs.executeUpdate(
+					"UPDATE login_ids SET password=\"" + newPassword + "\" WHERE password=\"" + Password + "\""
+			);
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+	public void changeUsername(String newusername, String Password) {
+		try {
+			curs.executeUpdate(
+					"UPDATE login_ids SET username=\"" + newusername + "\" WHERE password=\"" + Password + "\""
+			);
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+
+
+
 	//check if employee already log in for the day
 	public Boolean VerifyClockin(String empID) {
 		try {
