@@ -67,6 +67,12 @@ public class EmployeeDetailFrame extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 new TableToPDF().EmployeePDF(data);
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Download Successful",
+                        "Download Successful",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
             }
         });
     }

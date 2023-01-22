@@ -101,9 +101,21 @@ public class EmployeeAttendanceFrame extends JFrame{
                     String dat1 = sdf.format(dat);
                     Object[][] Attendance_data = Main.dbManager.getAttendance(dat1);
                     new TableToPDF().AttandancePDF(Attendance_data);
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Download Successful",
+                            "Download Successful",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
                 }
                 else {
                     new TableToPDF().AttandancePDF(attendance);
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Download Successful",
+                            "Download Successful",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
                 }
             }
         });

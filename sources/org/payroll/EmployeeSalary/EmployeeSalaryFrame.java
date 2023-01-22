@@ -105,9 +105,21 @@ public class EmployeeSalaryFrame extends JFrame{
                     mnth = mnth + 1;
                     Object[][] Ndata = Main.dbManager.getSalaryByMonthAndYear(mnth, yr);
                     new TableToPDF().SalaryPDF(Ndata);
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Download Successful",
+                            "Download Successful",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
                 }
                 else {
                     new TableToPDF().SalaryPDF(data);
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Download Successful",
+                            "Download Successful",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
                 }
             }
         });
