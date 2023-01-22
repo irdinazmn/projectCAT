@@ -9,6 +9,6 @@ public class Main {
 		dbManager = new DatabaseManager("Test.db");
 		// If "the path to database file" is empty, a temporary in-memory database is opened.
 		
-		(new UserTypeFrame()).setVisible(true);
+//		(new LoginFrame()).setVisible(true);
 	}
 }
