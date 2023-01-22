@@ -2,40 +2,40 @@
 
 ### Screenshots
 
-<img alt="UserType" src="C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\UserType.png"/>
+![UserType](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\UserType.png)
 
-![Login Screen](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Login%20Screen.PNG)
+![Employee Login](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Employee Login.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Employee Clock-in or Clock-out](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Employee Clock-In Clock-Out.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Manager Login](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Manager Login.png)
 
-![Main Window](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Main%20Window.PNG)
+![Manager Dashboard](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Manager Dashboard.png)
 
-![Login Screen](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Login%20Screen.PNG)
+![Manager Profile](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Manager Profile.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Change Username Profile](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Change Username Profile.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Change Password Profile](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Change Password Profile.png)
 
-![Main Window](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Main%20Window.PNG)
+![About](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\About.png)
 
-![Login Screen](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Login%20Screen.PNG)
+![Employee Management Menu](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Employee Management Menu.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Add Employee](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Add Employee.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Delete Employee](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Delete Employee.png)
 
-![Main Window](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Main%20Window.PNG)
+![Update Employee](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Update Employee.png)
 
-![Login Screen](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Login%20Screen.PNG)
+![Employee Detail Table](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Employee Detail Table.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Employee Attendance Table](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Employee Attendance Table.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Employee Salary Table](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Employee Salary Table.png)
 
-![Login Screen](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/Login%20Screen.PNG)
+![Positions Table](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Positions Table.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Add Position](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Add Position.png)
 
-![About](https://github.com/cerebrus-sys/Employee-Payroll-System/blob/master/Screenshots/About.PNG)
+![Delete Position](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Delete Position.png)
