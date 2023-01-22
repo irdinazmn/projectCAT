@@ -22,7 +22,7 @@ public class TableToPDF {
             int count = table.getRowCount();// get total table column
             Document document = new Document();
 
-            PdfWriter.getInstance(document, new FileOutputStream("C:\\Downloads\\Employee_List.PDF")); // specify path to download PDF
+            PdfWriter.getInstance(document, new FileOutputStream("Employee_List.PDF")); // specify path to download PDF
             document.open();
             float[] widths = {2, 3, 3, 5, 3}; // set the table column size porportion
             PdfPTable tab = new PdfPTable(widths);
@@ -134,7 +134,7 @@ public class TableToPDF {
             int count = table.getRowCount();
             Document document = new Document();
 
-            PdfWriter.getInstance(document, new FileOutputStream("C:\\Downloads\\Salary_List.PDF"));
+            PdfWriter.getInstance(document, new FileOutputStream("Salary_List.PDF"));
             document.open();
             float[] widths = {2, 5, 1, 1, 2 , 2};
             PdfPTable tab = new PdfPTable(widths);
@@ -162,7 +162,7 @@ public class TableToPDF {
                 String value3 = obj3.toString();
                 String value4 = obj4.toString();
                 String value5 = obj5.toString();
-                String value6 = obj5.toString();
+                String value6 = obj6.toString();
 
                 tab.addCell(value1);
                 tab.addCell(value2);
