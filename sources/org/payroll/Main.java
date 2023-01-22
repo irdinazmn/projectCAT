@@ -6,9 +6,10 @@ public class Main {
 	public static DatabaseManager dbManager;	// shared database manager
 	
 	public static void main(String[] args) {
-		dbManager = new DatabaseManager("Test.db");
+		dbManager = new DatabaseManager("Test2.db");
 		// If "the path to database file" is empty, a temporary in-memory database is opened.
-		
-//		(new LoginFrame()).setVisible(true);
+
+
+		new UserTypeFrame().setVisible(true);
 	}
 }

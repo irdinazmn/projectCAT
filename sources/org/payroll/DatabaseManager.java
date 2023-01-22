@@ -40,10 +40,10 @@ public class DatabaseManager {
 	void initNewDatabase() {
 		try {
 			curs.executeUpdate(
-					"CREATE TABLE login_ID (id INTEGER NOT NULL PRIMARY KEY, username STRING NOT NULL, password STRING NOT NULL)"
+					"CREATE TABLE login_ids (id INTEGER NOT NULL PRIMARY KEY, username STRING NOT NULL, password STRING NOT NULL)"
 			);
 			curs.executeUpdate(
-					"INSERT INTO login_ID VALUES(null, \"admin\", \"1\")"
+					"INSERT INTO login_ids VALUES(null, \"admin\", \"1\")"
 			);
 			curs.executeUpdate(
 					"CREATE TABLE Position(" +
