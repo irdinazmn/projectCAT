@@ -86,11 +86,12 @@ public class DatabaseManager {
 	}
 
 // verify if the ID exist
-	public Boolean verifyLoginId(String username) {
+
+	public Boolean verifyLoginId(String id) {
 		try {
 			return curs.executeQuery(
-					"SELECT * FROM login_ids WHERE username=\"" + username + "\""
-				).next();
+					"SELECT * FROM login_ids WHERE id=\"" + id + "\""
+			).next();
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
