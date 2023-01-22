@@ -2,7 +2,7 @@
 
 ### Screenshots
 
-![UserType](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\UserType.png)
+![UserType](Screenshots/About.png)
 
 ![Employee Login](C:\Users\CHUSNUL MARIYAH\Documents\CAT201Project-Group51-Employee-Payroll-System-master\Screenshots\Employee Login.png)
 
