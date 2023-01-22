@@ -38,7 +38,7 @@ public class PositionFrame extends JFrame {
         //declaring Object[][] variable to store the data from the database
         Object[][] data = Main.dbManager.getPositions();
         //Set the JTable based on the data from the database
-        String col[] = {"Employee ID","Employee Position","Hourly Rate","Overtime Rate"};
+        String col[] = {"Position ID","Position","Hourly Rate","Overtime Rate"};
         JTblListPostion.setModel(new DefaultTableModel(data,col));
 
         //Back action listener to call back the previous frame
