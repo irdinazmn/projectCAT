@@ -1,4 +1,5 @@
 package org.payroll;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -629,14 +630,16 @@ public class DatabaseManager {
 			while (rs.next()) {
 
 
+				double total_salary_2dp = Math.round(rs.getDouble("Tot_sal"));
+				double total_time_2dp = Math.round(rs.getDouble("Tot_time"));
+
 				Object[] temp = {
 						rs.getString("emp_id"),
 						rs.getString("emp_name"),
 						rs.getInt("sal_month"),
 						rs.getInt("sal_year"),
-						rs.getDouble("Tot_sal"),
-						rs.getDouble("Tot_time")
-
+						total_salary_2dp,
+						total_time_2dp
 				};
 
 				Salary.add(temp);
@@ -670,13 +673,16 @@ public class DatabaseManager {
 
 			while (rs.next()) {
 
+				double total_salary_2dp = Math.round(rs.getDouble("tot_salary"));
+				double total_time_2dp = Math.round(rs.getDouble("Tot_time"));
+
 				Object[] temp = {
 						rs.getString("emp_id"),
 						rs.getString("emp_name"),
 						rs.getInt("sal_month"),
 						rs.getInt("sal_year"),
-						rs.getDouble("Tot_salary"),
-						rs.getDouble("Tot_time")
+						total_salary_2dp,
+						total_time_2dp
 
 				};
 
