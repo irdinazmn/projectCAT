@@ -51,34 +51,20 @@ public class ChangeUsernameFrame extends JFrame{
                 String C_UName = (JTFldConfirmUsername.getText());
 
                 //Verifying the user input
-                if (N_UName == C_UName) {
-                    if (Main.dbManager.verifyLoginId(Pass)) {
-                        Main.dbManager.changeUsername(N_UName, Pass);
-                        JOptionPane.showMessageDialog(
-                                null,
-                                "Username Changed",
-                                "Username Changed",
-                                JOptionPane.INFORMATION_MESSAGE
-                        );
-                        dispose();
-                    }
-                    else {
-                        JOptionPane.showMessageDialog(
-                                null,
-                                "Username Change Failed\nYou enter wrong password",
-                                "Username Change Failed",
-                                JOptionPane.INFORMATION_MESSAGE
-                        );
-                        JPFldPassword.setText("");
-                        JTFldNewUsername.setText("");
-                        JTFldConfirmUsername.setText("");
-                    }
-                }
-                else {
+                if (Main.dbManager.verifyLoginId(Pass)) {
+                    Main.dbManager.changeUsername(N_UName, Pass);
                     JOptionPane.showMessageDialog(
                             null,
-                            "Username Change Failed\nCannot confirm the new username",
-                            "Cannot confirm the new username",
+                            "Username Changed",
+                            "Username Changed",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Username Change Failed\nYou enter wrong password",
+                            "Username Change Failed",
                             JOptionPane.INFORMATION_MESSAGE
                     );
                     JPFldPassword.setText("");

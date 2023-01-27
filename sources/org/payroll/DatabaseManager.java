@@ -91,7 +91,7 @@ public class DatabaseManager {
 	public Boolean verifyLoginId(String id) {
 		try {
 			return curs.executeQuery(
-					"SELECT * FROM login_ids WHERE id=\"" + id + "\""
+					"SELECT * FROM login_ids WHERE password=\"" + id + "\""
 			).next();
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
@@ -102,7 +102,7 @@ public class DatabaseManager {
 	public Boolean verifyLoginId(String username, String password) {
 		try {
 			return curs.executeQuery(
-					"SELECT * FROM login_ID WHERE username=\"" + username + "\" AND password=\"" + password + "\""
+					"SELECT * FROM login_ids WHERE username=\"" + username + "\" AND password=\"" + password + "\""
 				).next();
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());

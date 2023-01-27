@@ -44,7 +44,7 @@ public class DeleteEmployeeFrame extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 String Id = JTFldEmpID.getText();
-                if (Main.dbManager.verifyLoginId(Id)) {
+                if (Main.dbManager.existsEmployeeID(Id)) {
 
                     Main.dbManager.deleteEmployee(Id);
 
