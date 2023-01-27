@@ -673,7 +673,7 @@ public class DatabaseManager {
 
 			while (rs.next()) {
 
-				double total_salary_2dp = Math.round(rs.getDouble("tot_salary") * 100.0)/100/0;
+				double total_salary_2dp = Math.round(rs.getDouble("tot_salary") * 100.0)/100.0;
 				double total_time_2dp = Math.round(rs.getDouble("Tot_time")*100.0)/100.0;
 
 				Object[] temp = {
